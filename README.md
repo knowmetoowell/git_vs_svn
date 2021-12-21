@@ -77,7 +77,7 @@ https://devrappers.tistory.com/20?category=856233
 - master와 develop가 중요한 매인 브랜치이고 나머지는 필요에 의해서 운영하는 브랜치
 
 img
-![screensh](./img/git-flow)
+![Git-Flow](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git-flow.png "Git-flow 도식화")
 
 
 ------
