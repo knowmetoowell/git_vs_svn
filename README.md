@@ -63,7 +63,7 @@
 
 ![Git-Flow](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git-flow.png "Git-flow 도식화")
 
-        1. 일단 master 브랜치에서 시작을 합니다.
+        1. master 브랜치에서 시작을 합니다.
         2. 동일한 브랜치를 develop에도 생성을 합니다. 개발자들은 이 develop 브랜치에서 개발을 진행합니다.
         3. 개발을 진행하다가 회원가입, 장바구니 등의 기능 구현이 필요할 경우 A개발자는 develop 브랜치에서 feature 
         브랜치를 하나 생성해서 회원가입 기능을 구현하고 B개발자도 develop 브랜치에서 feature 브랜치를 하나 생성해
@@ -195,8 +195,6 @@ checkout
 
 
 ## 결론
-
-
 
 ![git_svn 비교표](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn_%EB%B9%84%EA%B5%90%ED%91%9C.png)
 
