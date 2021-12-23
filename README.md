@@ -196,6 +196,10 @@ checkout
 
 ## 결론
 
-![git_svn 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png "Git-flow 도식화")
+
+
+![git_svn 비교표](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn_%EB%B9%84%EA%B5%90%ED%91%9C.png)
+
+![git_svn 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png)
 
 ![검색량 추이](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EA%B2%80%EC%83%89%EB%9F%89%20%EC%B6%94%EC%9D%B4.png "Git-flow 도식화")
