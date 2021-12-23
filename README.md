@@ -99,25 +99,20 @@
 
 - 코드 충돌을 최소화할 수 있고 push 권한이 없는 오픈 소스 프로젝트에 기여할 때(Fork) 많이 사용
 
-### Git 사용 예시
-1. Project 선정 및 Clone
 
-2. Git-flow에 따른 사용
-
-3. Conflict가 없으면 브랜치 병합(Merge) 혹은 Pull Request
-
-4. push 권한이 없는 프로젝트라면 Folk후 2~3 반복
-
-5. Folk후 pull request 시연
 ------
 ## SVN
 
+### TortoiseSVN
+- 버전 관리 도구
+
 ### Visual SVN Server Manager
-- github, gitlab 처럼 원격 repository를 생성하는 어플리케이션
+- github, gitlab 처럼 원격 repository를 생성
+- repository 접근 계정 및 권한 설정
 
 ### SVN 용어
 
-trunk
+trunk(= git main/master)
 
 - 프로젝트에서 가장 중심이 되는 디렉토리
 
@@ -127,15 +122,14 @@ trunk
 
 - 단어 자체의 뜻은 mainLine 과 동일한 뜻
 
-Update
+Update(= git pull = fetch + merge)
 
 - Local의 파일을 Repository와 비교하여 최신 버전의 상태로 갱신한다.
 
 - 동일한 파일을 Repository와 Local에서 동시에 변경한 경우 서브버전에서 자동으로 Merge 해주지만
 서브버전에서 Merge를 할 수 없을 경우 Conflict상태로 변경될 수 있다.
 
-- 충돌이 발생하면 사용자에게 Merge 작업을 위임한다. (우리가 직접 해야 한다.)
-
+- 충돌이 발생하면 사용자에게 Merge 작업을 위임한다.
 
 
 Revision
@@ -158,14 +152,9 @@ BASE
 
 - commit 시점에 만약 HEAD와 BASE가 다르다면 commit이 거부되고 update를 먼저 수행해야만 commit이 가능하게 된다.
 
-<BR>
-
-### git / svn 용어 차이
-commit 
+commit
 - git은 로컬저장소에 저장(push가 원격에 저장)
 - svn은 원격저장소에 저장
-
-git pull(fetch + merge) = svn update
 
 checkout
 - git은 작업 브랜치로 이동하는 것을 의미
@@ -173,17 +162,35 @@ checkout
 
 
 
-svn 시연 과정
+### Git 사용 예시
+1. Project 선정 및 Clone
+
+2. Git-flow에 따른 사용
+
+3. Conflict가 없으면 브랜치 병합(Merge) 혹은 Pull Request
+
+4. Conflict가 있으면 해결 후 브랜치 병합(Merge) 혹은 Pull Request
+
+5. push 권한이 없는 프로젝트라면 Folk후 2~4 반복
+
+5. Folk후 pull request
+
+### svn 사용 예시
 1. Visual SVN Server 만들기
+
 2. 개발한 것 Server에 import
+
 3. 다른 협업자가 Server Checkout
+
 4. 다른 협업자가 일을 함
+
 5. commit(깃에서는 push)
+
 6. conflict 해결
+
 7. 다시 커밋
+
 8. update
-
-
 
 
 
