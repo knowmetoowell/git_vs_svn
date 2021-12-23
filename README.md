@@ -57,6 +57,7 @@
         feature : 단위 기능을 개발하는 브랜치로 기능 개발이 완료되면 develop 브랜치에 Merge
         release : 배포를 위해 master 브랜치로 보내기 전에 먼저 QA(품질검사)를 하기위한 브랜치
         hotfix : master 브랜치로 배포를 했는데 버그가 생겼을 떄 긴급 수정하는 브랜치
+        
 - master와 develop가 중요한 매인 브랜치이고 나머지는 필요에 의해서 운영하는 브랜치
 
 - Git-flow 도식화 
@@ -162,6 +163,8 @@ checkout
 
 
 
+-----------------
+
 ### Git 사용 예시
 1. Project 선정 및 Clone
 
@@ -200,4 +203,4 @@ checkout
 
 ![git_svn 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png)
 
-![검색량 추이](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EA%B2%80%EC%83%89%EB%9F%89%20%EC%B6%94%EC%9D%B4.png "Git-flow 도식화")
+![검색량 추이](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EA%B2%80%EC%83%89%EB%9F%89%20%EC%B6%94%EC%9D%B4.png)
