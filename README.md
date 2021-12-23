@@ -10,19 +10,19 @@
 
  - 또한 팀 프로젝트에서도 누가 무엇을 어떻게 수정했는지도 알 수 있기 때문에 코드를 병합하거나 수정된 소스를 추적하는 데에도 쓰임
 
- - Git과 SNV을 많이 씀
+ - Git과 SVN을 많이 씀
 
 
 ------
+
+
+
+---
 ## Git
-
-### GitHub GitLab Bitbucket // cloud
-- Git Repository에 대한 원격 액세스를 제공하는 서비스
-- Git-hub
-
-        Microsoft의 자회사로 Git 서버 호스팅과 프로그래밍 협업을 위한 다양한 기능을 제공하고 있는 서비스
-- Git-lab
-- Bitbucket
+### Git Repository에 대한 원격 액세스를 제공하는 서비스
+- Git-hub(Microsoft)
+- Git-lab(Gitlab Inc.)
+- Bitbucket(Atlassian)
 <!-- ### Git-hub 무료 계정 vs Pro 플랜 계정
 
 - Public 저장소에서는 무료 계정과 Pro 플랜 계정의 차이가 거의 없음
@@ -44,9 +44,10 @@
          - 저장소 인사이트 -->
 
 
-### Git bash vs Sourcetree
+### Git bash vs Git gui vs Sourcetree
 - git bash는 CLI환경으로 명령어를 사용하여 git을 사용함
-- Sourcetree는 다양한 명령어를 GUI로 시각화하여 쉽게 git을 사용하기 위한 도구 
+- git gui는 다양한 명령어를 GUI로 시각화하여 쉽게 git을 사용하기 위한 도구(GIT 기본 프로그램)
+- Sourcetree는 다양한 명령어를 GUI로 시각화하여 쉽게 git을 사용하기 위한 도구(Jira, Trello를 개발사인 Atlassian)
 
 ### Git Flow
 - Git-flow는 Git이 새롭게 활성화되기 시작하는 쯤에 Vincent Driessen이라는 사람의 블로그 글에 의해 널리 퍼지기 시작했고 현재는 Git으로 개발할 때 거의 표준과 같이 사용되는 방법론
@@ -109,45 +110,16 @@
 3. Conflict가 없으면 브랜치 병합(Merge) 혹은 Pull Request
 
 4. push 권한이 없는 프로젝트라면 Folk후 2~3 반복
+
+5. Folk후 pull request 시연
 ------
 ## SVN
 
 ### Visual SVN Server Manager
+- github, gitlab 처럼 원격 repository를 생성하는 어플리케이션
 
+### SVN 용어
 
-- repository(저장소) 
-
-        프로젝트의 파일 및 변경 정보가 저장되는 장소
-
-
-- trunk
-
-        메인 개발 소스
-        개발 소스를 commit 했을 때 개발 소스가 모이는 곳
-
-- branch
-
-        trunk에서 분기된 개발 소스
-        실험적인 기능을 추가하거나, 출시를 위한 안정화 버전 작업을 할 때
-
-- tag
-
-        특정 시점에서 프로젝트의 스냅샷을 찍어두는 것
-        branch와 tag는 사실 동일하지만, tag는 관례적으로 더 이상 개발하지 않고 어떤 버전으로 딱 얼려두는 것
-        tagging 하는 것도 revision으로 기록된다
-
-- 리비전(Revision)
-
-        소스 파일등을 수정하여 커밋하게 되면 일정한 규칙에 의해 숫자가 증가(새 버전 생성)합니다.
-        저장소에 저장된 각각의 파일 버전이라 할 수 있습니다. Subversion의 경우 파일별로 리비전이 매겨지지 않고 한 번 커밋 한 것으로 전체 리비전이 매겨 집니다.
-        
-- Update
-
-        -Local의 파일을 Repository와 비교하여 최신 버전의 상태로 갱신한다.
-        -동일한 파일을 Repository와 Local에서 동시에 변경한 경우 서브버전에서 자동으로 Merge 해주지만
-         서브버전에서 Merge를 할 수 없을 경우 Conflict상태로 변경될 수 있다.
-        -충돌이 발생하면 사용자에게 Merge 작업을 위임한다. (우리가 직접 해야 한다.)
------
 trunk
 
 - 프로젝트에서 가장 중심이 되는 디렉토리
@@ -158,33 +130,66 @@ trunk
 
 - 단어 자체의 뜻은 mainLine 과 동일한 뜻
 
+Update
 
-branches
+- Local의 파일을 Repository와 비교하여 최신 버전의 상태로 갱신한다.
 
-- trunk 에서 뻗어져 나온 나무가지를 뜻합니다.
+- 동일한 파일을 Repository와 Local에서 동시에 변경한 경우 서브버전에서 자동으로 Merge 해주지만
+서브버전에서 Merge를 할 수 없을 경우 Conflict상태로 변경될 수 있다.
 
-- 프로그램을 개발하다 보면 trunk 디렉토리에서 또 다른 작은 분류로 빼서 개발해야 할 경우가 생김.
-
-- 프로젝트 내의 작은 프로젝트라 생각하면 됨
-
-- branches 디렉토리 안에 또 다른 디렉토리를 두어 그 안에서 개발하게 됨
-
-
-tags
-
-- 단어 자체의 뜻은 꼬리표 
-
-- 이 디렉토리는 프로그램을 개발하면서 정기적으로 릴리즈 할 때 , 0.1/0.2/1.0 등
-
-- 버전 별로 소스 코드를 따로 관리하는 공간
-
-- 버전 별로 태그를 붙여서 tag 디렉토리 안에 보관한다고 생각하면 됩니다.
+- 충돌이 발생하면 사용자에게 Merge 작업을 위임한다. (우리가 직접 해야 한다.)
 
 
 
+Revision
+
+- 이름이 의미하듯 수정된 버전을 의미한다. 
+
+- 클라이언트가 Repository에 새로운 파일 또는 파일을 수정하여 commit할 때 마다 revision 번호가 하나씩 증가하게 된다.
+
+HEAD
+
+- Repository에 저장된 최신 revision을 의미한다. 
+
+- 즉 누군가에 의해 가장 최근에 commit된 revision이다.
+
+BASE
+
+- 클라이언트가 checkout 또는 update 명령을 통해 Repository로 부터 내려받은 revision을 의미한다. 
+
+- 이 revision을 기준으로 클라이언트는 수정을하고 commit 하게 된다. 
+
+- commit 시점에 만약 HEAD와 BASE가 다르다면 commit이 거부되고 update를 먼저 수행해야만 commit이 가능하게 된다.
+
+<BR>
+
+### git / svn 용어 차이
+commit 
+- git은 로컬저장소에 저장(push가 원격에 저장)
+- svn은 원격저장소에 저장
+
+git pull(fetch + merge) = svn update
+
+checkout
+- git은 작업 브랜치로 이동하는 것을 의미
+- svn은 로컬저장소와 원격저장소를 연결(= git remote)
+
+
+
+svn 시연 과정
+1. Visual SVN Server 만들기
+2. 개발한 것 Server에 import
+3. 다른 협업자가 Server Checkout
+4. 다른 협업자가 일을 함
+5. commit(깃에서는 push)
+6. conflict 해결
+7. 다시 커밋
+8. update
 
 
 
 
 
+## 결론
 
+![검색량 추이](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn 검색량 추이.png "Git-flow 도식화")
