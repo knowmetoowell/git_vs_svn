@@ -201,7 +201,7 @@ checkout
 
 6. push 권한이 없는 프로젝트라면 Folk후 2~4 반복
 
-7. public repo Folk후 pull request
+7. public repo(open source인 경우) Folk후 pull request
 
 ### svn 사용 예시
 1. Visual SVN Server 만들기
