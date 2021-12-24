@@ -16,10 +16,38 @@
 ------
 
 ## Git
+### 필요한 설치 프로그램
+- git
+
+        버전 관리 툴, svn에 비해 기능이 다양함
+
+- Git bash vs Git gui vs Sourcetree
+       
+        git bash는 CLI환경으로 명령어를 사용하여 git을 사용함(GIT 기본 프로그램)
+        git gui는 다양한 명령어를 GUI로 시각화하여 쉽게 git을 사용하기 위한 도구(GIT 기본 프로그램)
+        Sourcetree는 다양한 명령어를 GUI로 시각화하여 쉽게 git을 사용하기 위한 도구(Jira, Trello를 개발사인 Atlassian)
+
+- git 설치 및 기능 참고 -https://devrappers.tistory.com/category/Git
+
 ### Git Repository에 대한 원격 액세스를 제공하는 서비스
 - Git-hub(Microsoft)
+
+        가장 많이 사용하기 때문에 접근성이 좋음
+        속도와 안정성이 가장 좋음
+
 - Git-lab(Gitlab Inc.)
+
+        가격 정책이 가장 좋음
+        CI/CD를 위한 기능이 잘 되어있음
+        리눅스 설치형 프로그램이 무료임
+        속도가 느리고 안정성이 불안함
+
 - Bitbucket(Atlassian)
+
+        다른 버전관리 툴과 호환성이 좋음
+        JIRA, Trello와 같은 DevOps tool 제공(같은 회사 제품)
+        속도와 안정성은 무난함
+
 <!-- ### Git-hub 무료 계정 vs Pro 플랜 계정
 
 - Public 저장소에서는 무료 계정과 Pro 플랜 계정의 차이가 거의 없음
@@ -41,10 +69,7 @@
          - 저장소 인사이트 -->
 
 
-### Git bash vs Git gui vs Sourcetree
-- git bash는 CLI환경으로 명령어를 사용하여 git을 사용함
-- git gui는 다양한 명령어를 GUI로 시각화하여 쉽게 git을 사용하기 위한 도구(GIT 기본 프로그램)
-- Sourcetree는 다양한 명령어를 GUI로 시각화하여 쉽게 git을 사용하기 위한 도구(Jira, Trello를 개발사인 Atlassian)
+
 
 ### Git Flow
 - Git-flow는 Git이 새롭게 활성화되기 시작하는 쯤에 Vincent Driessen이라는 사람의 블로그 글에 의해 널리 퍼지기 시작했고 현재는 Git으로 개발할 때 거의 표준과 같이 사용되는 방법론
@@ -104,24 +129,20 @@
 ------
 ## SVN
 
-### TortoiseSVN
-- 버전 관리 도구
+### 필요한 설치 프로그램
+- TortoiseSVN
+        
+        버전 관리 툴, git에 비해 기능이 적음
 
-### Visual SVN Server Manager
-- github, gitlab 처럼 원격 repository를 생성
-- repository 접근 계정 및 권한 설정
+- Visual SVN Server Manager
+        
+        github, gitlab 처럼 원격 repository를 생성
+        repository 접근 계정 및 권한 설정
+
+- SVN 설치 및 사용법 참조
+https://junspapa-itdev.tistory.com/50
 
 ### SVN 용어
-
-trunk(= git main/master)
-
-- 프로젝트에서 가장 중심이 되는 디렉토리
-
-- 모든 프로그램의 개발 작업은 Trunk 디렉토리에서 이루어 집니다.
-
-- trunk 디렉토리 바로 아래에는 소스들의 파일과 디렉토리가 들어가게 됩니다.
-
-- 단어 자체의 뜻은 mainLine 과 동일한 뜻
 
 Update(= git pull = fetch + merge)
 
@@ -153,6 +174,7 @@ BASE
 
 - commit 시점에 만약 HEAD와 BASE가 다르다면 commit이 거부되고 update를 먼저 수행해야만 commit이 가능하게 된다.
 
+### 깃과 단어는 같지만 다른 동작
 commit
 - git은 로컬저장소에 저장(push가 원격에 저장)
 - svn은 원격저장소에 저장
@@ -166,20 +188,25 @@ checkout
 -----------------
 
 ### Git 사용 예시
-1. Project 선정 및 Clone
 
-2. Git-flow에 따른 사용
+1. github repository 생성 / local 폴더 생성
 
-3. Conflict가 없으면 브랜치 병합(Merge) 혹은 Pull Request
+2. 협업자 등록을 위해 push 권한 부여
 
-4. Conflict가 있으면 해결 후 브랜치 병합(Merge) 혹은 Pull Request
+3. Git-flow에 따른 사용
 
-5. push 권한이 없는 프로젝트라면 Folk후 2~4 반복
+4. Conflict가 없으면 브랜치 병합(Merge) 혹은 Pull Request
 
-5. Folk후 pull request
+5. Conflict가 있으면 해결 후 브랜치 병합(Merge) 혹은 Pull Request
+
+6. push 권한이 없는 프로젝트라면 Folk후 2~4 반복
+
+7. public repo Folk후 pull request
 
 ### svn 사용 예시
 1. Visual SVN Server 만들기
+
+2. 사용자 추가 및 그룹설정, 권한 부여
 
 2. 개발한 것 Server에 import
 
@@ -187,20 +214,28 @@ checkout
 
 4. 다른 협업자가 일을 함
 
-5. commit(깃에서는 push)
+5. commit -> commit 시점에 만약 HEAD와 BASE가 다르다면 commit이 거부
 
 6. conflict 해결
 
-7. 다시 커밋
+7. 다시 commit
 
-8. update
+8. 주기적 update
 
 
 
-## 결론
+## git-svn 비교
 
+### 비교표
 ![git_svn 비교표](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn_%EB%B9%84%EA%B5%90%ED%91%9C.png)
+
+### 기능 도식화
 
 ![git_svn 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png)
 
+### 관심도 추이
+
 ![검색량 추이](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EA%B2%80%EC%83%89%EB%9F%89%20%EC%B6%94%EC%9D%B4.png)
+
+
+https://devrappers.tistory.com/category/Git
