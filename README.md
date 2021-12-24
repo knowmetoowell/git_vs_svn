@@ -33,6 +33,7 @@
 - Git-hub(Microsoft)
 
         가장 많이 사용하기 때문에 접근성이 좋음
+        github action이라는 CI/CD 툴 제공
         속도와 안정성이 가장 좋음
 
 - Git-lab(Gitlab Inc.)
@@ -71,7 +72,7 @@
 
 
 
-### Git Flow
+### Git Flow - 깃 사용을 위한 방법론
 - Git-flow는 Git이 새롭게 활성화되기 시작하는 쯤에 Vincent Driessen이라는 사람의 블로그 글에 의해 널리 퍼지기 시작했고 현재는 Git으로 개발할 때 거의 표준과 같이 사용되는 방법론
 - 즉, Git-flow는 기능이 아니고 서로간의 약속인 방법론
 - Git-flow가 완벽한 방법론은 아니고 각자 개발 환경에 따라 수정하고 변형해서 사용
@@ -125,7 +126,23 @@
 
 - 코드 충돌을 최소화할 수 있고 push 권한이 없는 오픈 소스 프로젝트에 기여할 때(Fork) 많이 사용
 
+------
+### Git 사용 예시
+0. 환경구축
 
+1. github repository 생성 / local 폴더 생성
+
+2. 협업자가 있다면 등록
+
+3. Git-flow에 따른 사용
+
+4. Conflict가 없으면 브랜치 병합(Merge) 혹은 Pull Request
+
+5. Conflict가 있으면 해결 후 브랜치 병합(Merge) 혹은 Pull Request
+
+6. push 권한이 없는 프로젝트(open source인 경우)라면 Fork후 2~4 반복
+
+example github opensource - https://github.com/vuejs/vue
 ------
 ## SVN
 
@@ -144,7 +161,7 @@ https://junspapa-itdev.tistory.com/50
 
 ### SVN 용어
 
-Update(= git pull = fetch + merge)
+Update(= git pull)
 
 - Local의 파일을 Repository와 비교하여 최신 버전의 상태로 갱신한다.
 
@@ -159,6 +176,7 @@ Revision
 - 이름이 의미하듯 수정된 버전을 의미한다. 
 
 - 클라이언트가 Repository에 새로운 파일 또는 파일을 수정하여 commit할 때 마다 revision 번호가 하나씩 증가하게 된다.
+
 
 HEAD
 
@@ -176,7 +194,7 @@ BASE
 
 ### 깃과 단어는 같지만 다른 동작
 commit
-- git은 로컬저장소에 저장(push가 원격에 저장)
+- git은 로컬저장소에 저장된 것을 snapshot / 원격 저장소에서의 commit은 원격저장소에 반영됨
 - svn은 원격저장소에 저장
 
 checkout
@@ -187,40 +205,29 @@ checkout
 
 -----------------
 
-### Git 사용 예시
 
-1. github repository 생성 / local 폴더 생성
-
-2. 협업자 등록을 위해 push 권한 부여
-
-3. Git-flow에 따른 사용
-
-4. Conflict가 없으면 브랜치 병합(Merge) 혹은 Pull Request
-
-5. Conflict가 있으면 해결 후 브랜치 병합(Merge) 혹은 Pull Request
-
-6. push 권한이 없는 프로젝트라면 Folk후 2~4 반복
-
-7. public repo(open source인 경우) Folk후 pull request
 
 ### svn 사용 예시
-1. Visual SVN Server 만들기
+0. 환경 구축
+
+1. Visual SVN Server - Repository 만들기
 
 2. 사용자 추가 및 그룹설정, 권한 부여
 
-2. 개발한 것 Server에 import
+3. 개발한 것 Server에 import
 
-3. 다른 협업자가 Server Checkout
+4. 다른 협업자에게 user id/pw 알려주기 
 
-4. 다른 협업자가 일을 함
+5. 다른 협업자가 Server Checkout 및 작업
 
-5. commit -> commit 시점에 만약 HEAD와 BASE가 다르다면 commit이 거부
+6. commit -> commit 시점에 만약 HEAD와 BASE가 다르다면 commit이 거부(show log에서 확인가능)
 
-6. conflict 해결
+7. conflict 해결
 
-7. 다시 commit
+8. 다시 commit
 
-8. 주기적 update
+주기적 update
+
 
 
 
