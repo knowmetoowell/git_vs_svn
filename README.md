@@ -246,3 +246,103 @@ checkout
 
 
 https://devrappers.tistory.com/category/Git
+
+
+----------------------------------------------------------------
+
+# git vs svn 2
+
+## Windows git server
+
+### 설치 필요 프로그램
+- Git for Windows
+        
+        버전 관리
+        라이센스: MIT
+        다운로드: http://git-scm.com
+- Bonobo Git Server
+        
+        서버 관리
+        라이센스: MIT
+        다운로드: http://bonobogitserver.com
+
+- Microsoft .NET Framework 4.5
+        
+        Bonobo Git Server 실행을 위해 필요함(해당 PC에 미 설치된 경우 설치)
+        다운로드: https://www.microsoft.com/ko-kr/download/details.aspx?id=30653
+
+- SourceTree
+
+        클라이언트 GUI 툴 (CLI가 편하면 설치하지 않아도 됨)
+        라이센스: Free
+        다운로드: http://sourcetreeapp.com
+
+
+
+### Bonobo Git Server
+
+1. IIS 설치
+
+2. Bonobo Git Server 설치
+
+        다운로드 받고 압축 해제
+        압축 해제한 파일을 웹 서비스 디렉토리에 복사
+        기본 디렉토리: C:\inetpub\wwwroot
+        기본 디렉토리 및에 git 이란 디렉토리를 생성 후 복사(디렉토리 명은 개인 취향대로 생성)
+
+3. IIS 설정
+4. Bonobo Git Server 접속
+
+        http://127.0.0.1/설정한서버이름 혹은 http://IP주소/설정한서버이름
+        기본 관리자 계정: admin / admin
+
+5. 대용량 파일 push 도중 오류
+
+        Web.config 설정 파일 수정
+        -> C:\inetpub\wwwroot\설정한 서버 이름\Web.config
+
+        수정할 내용
+        
+        <!-- 최대 컨텐츠 용량 - KB 단위 -->
+        <httpruntime maxrequestlength="524288000">
+
+        <!-- 최대 업/다운로드 용량 - Bytes 단위 -->
+        <requestlimits maxallowedcontentlength="1048576000">
+
+
+
+
+### 시나리오
+1. moduleE 요구사항이 생김
+
+2. Feature/moduleE branch 생성
+
+3. moduleE 작업중
+
+4. moduleF 요구사항이 생김
+
+5. moduleE commit
+
+6. Feature/moduleF branch 생성
+
+7. moduleF 작업
+
+8. moduleF commit
+
+9. Feature/moduleF 작업완료
+
+10. develop push
+
+11. moduleE 작업완료
+
+12. moduleE commit
+
+13. Feature/moduleE 작업완료
+
+14. develop에 merge될때 moduleF 와의 충돌 발생 가능성 있음
+
+15. 충돌이 발생할경우 conflict 해결
+
+16. develop push
+
+17. moduleE branch 삭제가 안된경우 Feature/moduleE 작업완료
