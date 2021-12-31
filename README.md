@@ -283,6 +283,8 @@ https://devrappers.tistory.com/category/Git
 
 1. IIS 설치
 
+![IIS 설정](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202021-12-28%20094507.png)
+
 2. Bonobo Git Server 설치
 
         다운로드 받고 압축 해제
@@ -291,25 +293,13 @@ https://devrappers.tistory.com/category/Git
         기본 디렉토리 및에 git 이란 디렉토리를 생성 후 복사(디렉토리 명은 개인 취향대로 생성)
 
 3. IIS 설정
+
+
+
 4. Bonobo Git Server 접속
 
         http://127.0.0.1/설정한서버이름 혹은 http://IP주소/설정한서버이름
         기본 관리자 계정: admin / admin
-
-5. 대용량 파일 push 도중 오류
-
-        Web.config 설정 파일 수정
-        -> C:\inetpub\wwwroot\설정한 서버 이름\Web.config
-
-        수정할 내용
-        
-        <!-- 최대 컨텐츠 용량 - KB 단위 -->
-        <httpruntime maxrequestlength="524288000">
-
-        <!-- 최대 업/다운로드 용량 - Bytes 단위 -->
-        <requestlimits maxallowedcontentlength="1048576000">
-
-
 
 
 ### 시나리오
@@ -331,7 +321,7 @@ https://devrappers.tistory.com/category/Git
 
 9. Feature/moduleF 작업완료
 
-10. develop push
+10. Feature/moduleF develop push
 
 11. moduleE 작업완료
 
@@ -346,3 +336,20 @@ https://devrappers.tistory.com/category/Git
 16. develop push
 
 17. moduleE branch 삭제가 안된경우 Feature/moduleE 작업완료
+
+
+장점 
+
+- 깃허브에서 다운로드한 프로젝트의 소유자 별로 자동으로 분류해줍니다. (소스트리는 폴더로 직접 만들어줘야 함)
+
+- 만약 타인의 레파지토리라면 Commit 하려고 할 때 자동으로 포크(Fork) 한 뒤 커밋합니다. 더 좋은 것은 해당 커밋에 대한 푸시가 일어날 때 Pull Request 요청도 한 번에 됩니다.
+
+- 소스트리에 비해 빠르다.
+
+단점 
+
+- 너무 직관적이라서 실수를 할 경우가 종종 있다.
+
+- 소스트리보다 브랜치의 내용 파악이 어렵다.
+
+- 여러 개의 체크아웃을 직접 보고 선택하기 불편하다.
