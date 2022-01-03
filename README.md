@@ -252,17 +252,17 @@ https://devrappers.tistory.com/category/Git
 
 # git vs svn 2
 
-## Windows git server
+## Windows git server 구축
 
 ### 설치 필요 프로그램
 - Git for Windows
         
-        버전 관리
+        버전 관리 툴
         라이센스: MIT
         다운로드: http://git-scm.com
 - Bonobo Git Server
         
-        서버 관리
+        서버 관리 툴
         라이센스: MIT
         다운로드: http://bonobogitserver.com
 
@@ -271,11 +271,11 @@ https://devrappers.tistory.com/category/Git
         Bonobo Git Server 실행을 위해 필요함(해당 PC에 미 설치된 경우 설치)
         다운로드: https://www.microsoft.com/ko-kr/download/details.aspx?id=30653
 
-- SourceTree
+- git 클라이언트
 
-        클라이언트 GUI 툴 (CLI가 편하면 설치하지 않아도 됨)
-        라이센스: Free
-        다운로드: http://sourcetreeapp.com
+        git 클라이언트 GUI 툴 (CLI가 편하면 설치하지 않아도 됨)
+        종류: sourcetree, tortoiseGit, Git-fork, git Kraken, github desktop 등
+        
 
 
 
@@ -302,6 +302,13 @@ https://devrappers.tistory.com/category/Git
         기본 관리자 계정: admin / admin
 
 
+### stash란?
+
+        로컬에서 작업한 소스 내용을 임시로 다른 곳에 저장하는 기능
+        
+        현재 작업하고 있는 내용이 있는데 급하게 요청 온 내용이 있어서 현재 내용을 임시로 저장해놓고 급하게 요청 온 건만 올리고(push) 싶을 때 사용
+
+
 ### 시나리오
 1. moduleE 요구사항이 생김
 
@@ -311,7 +318,7 @@ https://devrappers.tistory.com/category/Git
 
 4. moduleF 요구사항이 생김
 
-5. moduleE commit
+5. moduleE commit / stash
 
 6. Feature/moduleF branch 생성
 
@@ -321,7 +328,7 @@ https://devrappers.tistory.com/category/Git
 
 9. Feature/moduleF 작업완료
 
-10. Feature/moduleF develop push
+10. Feature/moduleF develop merge
 
 11. moduleE 작업완료
 
@@ -333,23 +340,36 @@ https://devrappers.tistory.com/category/Git
 
 15. 충돌이 발생할경우 conflict 해결
 
-16. develop push
+16. develop merge
 
 17. moduleE branch 삭제가 안된경우 Feature/moduleE 작업완료
 
 
-장점 
 
-- 깃허브에서 다운로드한 프로젝트의 소유자 별로 자동으로 분류해줍니다. (소스트리는 폴더로 직접 만들어줘야 함)
+### git client 비교
 
-- 만약 타인의 레파지토리라면 Commit 하려고 할 때 자동으로 포크(Fork) 한 뒤 커밋합니다. 더 좋은 것은 해당 커밋에 대한 푸시가 일어날 때 Pull Request 요청도 한 번에 됩니다.
+- sourcetree
 
-- 소스트리에 비해 빠르다.
+        장점: 브랜치 내용 파악이 쉬움, 무료
+        단점: 안정성이 불안함 / Linux지원 안함
 
-단점 
+- tortoiseGit
 
-- 너무 직관적이라서 실수를 할 경우가 종종 있다.
+        장점: svn과 비슷한 사용법
+        단점: gui제공을 안함
 
-- 소스트리보다 브랜치의 내용 파악이 어렵다.
+- Git-fork
 
-- 여러 개의 체크아웃을 직접 보고 선택하기 불편하다.
+        장점: 소스트리와 사용법이 비슷하면서 안정성이 좋음 / 가볍고 빠름 / 1회성 구매
+        단점: Linux지원 안함
+
+- Git-Kraken
+
+        장점: 소스트리와 사용법이 비슷하면서 안정성이 좋음 / 가볍고 빠름
+        단점: private 저장소 사용시 월 구독료 내야함(git-hub pro 계정일 때 무료)
+
+
+- Github desktop
+
+        장점: github repository 사용시 효율이 좋음 / 가볍고 빠름
+        단점: 브랜치의 내용 파악이 어렵다 
