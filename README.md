@@ -438,6 +438,6 @@ https://devrappers.tistory.com/category/Git
 
 - 저장소를 히스토리와 더불어 전부 복제하기 때문에 서버에 문제가 생겨도 로컬에서 작업이 가능
 
-![로컬 버전 관리](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png)
-![중앙집중식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png)
-![분산관리식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png)
+![로컬 버전 관리](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%A1%9C%EC%BB%AC%20vcs%20.png)
+![중앙집중식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EC%A4%91%EC%95%99%EC%A7%91%EC%A4%91%EC%8B%9D.png)
+![분산관리식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%B6%84%EC%82%B0%EA%B4%80%EB%A6%AC%EC%8B%9D.png)
