@@ -249,8 +249,12 @@ https://devrappers.tistory.com/category/Git
 
 
 ----------------------------------------------------------------
+<br>
 
 # git vs svn 2
+
+## Git
+---------
 
 ## Windows git server 구축
 
@@ -301,48 +305,8 @@ https://devrappers.tistory.com/category/Git
         http://127.0.0.1/설정한서버이름 혹은 http://IP주소/설정한서버이름
         기본 관리자 계정: admin / admin
 
+<br>
 
-### stash란?
-
-        로컬에서 작업한 소스 내용을 임시로 다른 곳에 저장하는 기능
-        
-        현재 작업하고 있는 내용이 있는데 급하게 요청 온 내용이 있어서 현재 내용을 임시로 저장해놓고 급하게 요청 온 건만 올리고(push) 싶을 때 사용
-
-
-### 시나리오
-1. moduleE 요구사항이 생김
-
-2. Feature/moduleE branch 생성
-
-3. moduleE 작업중
-
-4. moduleF 요구사항이 생김
-
-5. moduleE commit / stash
-
-6. Feature/moduleF branch 생성
-
-7. moduleF 작업
-
-8. moduleF commit
-
-9. Feature/moduleF 작업완료
-
-10. Feature/moduleF develop merge
-
-11. moduleE 작업완료
-
-12. moduleE commit
-
-13. Feature/moduleE 작업완료
-
-14. develop에 merge될때 moduleF 와의 충돌 발생 가능성 있음
-
-15. 충돌이 발생할경우 conflict 해결
-
-16. develop merge
-
-17. moduleE branch 삭제가 안된경우 Feature/moduleE 작업완료
 
 
 
@@ -373,3 +337,107 @@ https://devrappers.tistory.com/category/Git
 
         장점: github repository 사용시 효율이 좋음 / 가볍고 빠름
         단점: 브랜치의 내용 파악이 어렵다 
+
+### git stash란?
+
+- 로컬에서 작업한 소스 내용을 임시로 다른 곳에 저장하는 기능
+        
+- 현재 작업하고 있는 내용이 있는데 급하게 요청 온 내용이 있어서 현재 내용을 임시로 저장해놓고 급하게 요청 온 건만 올리고(push) 싶을 때 사용
+
+### 시나리오
+0. 환경 구축 (깃 서버 생성, 원격저장소 설정 등)
+
+1. 장바구니기능 요구사항이 생김
+
+2. Feature/basket branch 생성
+
+3. basket 작업중
+
+4. 회원관리 요구사항이 생김
+
+5. basket commit or stash
+
+6. Feature/member_manager branch 생성
+
+7. member_manager 작업
+
+8. member_manager commit
+
+9. Feature/member_manager 작업완료
+
+10. Feature/member_manager develop merge
+
+11. basket 작업완료
+
+12. basket commit
+
+13. Feature/basket 작업완료
+
+14. basket이 develop에 merge될때 member_manager 와의 충돌 발생 가능성 있음
+
+15. 충돌이 발생할경우 conflict 해결
+
+16. develop merge
+
+
+
+
+
+-------
+<br>
+
+## SVN
+
+### Visual SVN Server 구축
+
+1. http://www.visualsvn.com/server/download/ 에서 서버 프로그램 다운로드 및 설치
+
+2. user 생성 및 group 생성 후 user를 group에 포함
+
+3. repository를 생성하여 그룹에 권한 부여
+
+4. URL를 이용해 확인 -> https://본인컴퓨터IP주소/svn
+
+
+### svn 사용 예시
+
+0. 환경 구축
+
+1. Visual SVN Server - Repository 만들기
+
+2. 사용자 추가 및 그룹설정, 권한 부여
+
+3. 개발한 것 Server에 import
+
+4. 다른 협업자에게 user id/pw 알려주기 
+
+5. 다른 협업자가 Server Checkout 및 작업
+
+6. commit -> commit 시점에 만약 HEAD와 BASE가 다르다면 commit이 거부(show log에서 확인가능)
+
+7. conflict 해결
+
+8. 다시 commit
+
+    주기적 update
+
+----
+### 중앙집중식(SVN) 
+
+- SVN은 로컬에서 Commit을 수행하면 바로 중앙 저장소에 반영이 됩니다. 그렇기 때문에 commit한 내용에 문제가 있을 경우 다른 개발자들에게 바로 영향을 미치게 되는 단점이 있다.
+
+- 서버와 연결이 끊어지면 기존 받아둔 소스 수정 이외의 일을 못함
+
+- 중앙 서버의 하드디스크에 문제가 생기면 모든 히스토리(로그)를 잃음 ->개인이 로컬에 저장한 스냅샷만 남게 됨
+
+
+### 분산관리식(Git)
+- Git은 로컬에서 Commit을 수행하면 로컬 저장소에 반영이 되고, 원하는 순간에 로컬 저장소에서 Push를 하면 원격 저장소에 반영이 된다.
+
+- 오프라인 환경에서도 로컬저장소에 commit하면 되고 로그를 볼 수 있음.
+
+- 저장소를 히스토리와 더불어 전부 복제하기 때문에 서버에 문제가 생겨도 로컬에서 작업이 가능
+
+![로컬 버전 관리](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png)
+![중앙집중식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png)
+![분산관리식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png)
