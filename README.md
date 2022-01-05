@@ -298,7 +298,7 @@ https://devrappers.tistory.com/category/Git
 
 3. IIS 설정
 
-![IIS 설성](../img/iis설정.png)
+![IIS 설정](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/iis%EC%84%A4%EC%A0%95.png)
 
 4. Bonobo Git Server 접속
 
