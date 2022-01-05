@@ -287,7 +287,7 @@ https://devrappers.tistory.com/category/Git
 
 1. IIS 설치
 
-![IIS 설정](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202021-12-28%20094507.png)
+![IIS 설치](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202021-12-28%20094507.png)
 
 2. Bonobo Git Server 설치
 
@@ -298,7 +298,7 @@ https://devrappers.tistory.com/category/Git
 
 3. IIS 설정
 
-
+![IIS 설성](../img/iis설정.png)
 
 4. Bonobo Git Server 접속
 
@@ -313,30 +313,70 @@ https://devrappers.tistory.com/category/Git
 ### git client 비교
 
 - sourcetree
+        
+        장점
+        
+        직관적인 UI
+        한글 패치 - 한국 유저가 Git을 입문하기 쉬워 한국 한정 점유율이 높다.
+        -> 커뮤니티가 잘 형성되어 있음
+        시각화- marge, branch등 시각화가 아주 잘 되어있다.
+        무료 사용
 
-        장점: 브랜치 내용 파악이 쉬움, 무료
-        단점: 안정성이 불안함 / Linux지원 안함
+        단점
+
+        줄수가 많은 파일을 미리 볼 때 느림
+        계정 인증 변경이 어려움
+        이미지 뷰어 제공안함
+        안정성이 불안함 
+        Linux지원 안함
 
 - tortoiseGit
 
-        장점: svn과 비슷한 사용법
-        단점: gui제공을 안함
+        장점: TortoiseSVN 의 소스를 기반으로 개발되어 기존 Tortoise 사용자라면 UI 가 친숙함
+        단점: 기능 및 안정성이 부족함, windows 전용, 직관성이 부족함
 
 - Git-fork
 
-        장점: 소스트리와 사용법이 비슷하면서 안정성이 좋음 / 가볍고 빠름 / 1회성 구매
-        단점: Linux지원 안함
+        안정성이 좋음 
+        가볍고 빠름 
+        1회성 구매(구매 안해도 큰 차이 없음)
+        충돌이 발생할 경우 ui를 통해 보기가 쉬움
+        이미지 뷰어 제공
+        직관적인 UI
+        블랙테마 지원
+        가로 세로 모드 지원
+        꾸준한 업데이트
+
+        단점
+        Linux지원 안함
+        한글 지원 안함
 
 - Git-Kraken
 
-        장점: 소스트리와 사용법이 비슷하면서 안정성이 좋음 / 가볍고 빠름
-        단점: private 저장소 사용시 월 구독료 내야함(git-hub pro 계정일 때 무료)
+        장점
+        
+        안정성이 좋음
+        가볍고 빠름
+        간단히 클릭만으로 commit comment를 수정할 수 있다.
+        특정브랜치의 커밋로그를 몰아서 볼 수있다.
+        직관적인 UI
+        다양한 자체 기능을 제공(redo/undo 등)
+        푸시하지 않은 커밋이나 체크아웃, 커밋 메시지 편집 등을 쉽게 undo 할 수 있다
+        드래그&드랍을 이용한 merge
 
+        단점
+        private 저장소 사용시 월 구독료 내야함(git-hub pro 계정일 때 무료)
+        이미지 뷰어 지원 안함
+        한글 지원 안함
 
 - Github desktop
 
-        장점: github repository 사용시 효율이 좋음 / 가볍고 빠름
-        단점: 브랜치의 내용 파악이 어렵다 
+        장점 
+        github 사용시 효율이 좋음
+        가볍고 빠름
+        
+        단점        
+        브랜치의 내용 파악이 어렵다 
 
 ### git stash란?
 
@@ -379,7 +419,21 @@ https://devrappers.tistory.com/category/Git
 
 16. develop merge
 
+17. release/v1 branch 생성
 
+18. 수정사항이 있다면 수정
+
+19. develop/master에 release/v_1 merge
+
+20. tag 남기기
+
+21. hotfix/hf_1 생성
+
+22. 수정
+
+23. develop/master에 hotfix/hf_1 merge
+
+24. tag 남기기
 
 
 
@@ -422,13 +476,32 @@ https://devrappers.tistory.com/category/Git
     주기적 update
 
 ----
+
+## 버전 관리 시스템
+
+### 로컬 버전 관리
+
+- 로벌 버전 관리 시스템은 간단한 데이터베이스를 이용해 파일의 이력(변경 정보)를 관리하는 시스템
+
+- 협업을 해야 하는 상황에서는 로컬 버전 관리 시스템으로의 버전 관리가 쉽지 않다. 
+- 
+
+
 ### 중앙집중식(SVN) 
 
-- SVN은 로컬에서 Commit을 수행하면 바로 중앙 저장소에 반영이 됩니다. 그렇기 때문에 commit한 내용에 문제가 있을 경우 다른 개발자들에게 바로 영향을 미치게 되는 단점이 있다.
+- SVN은 로컬에서 Commit을 수행하면 바로 중앙 저장소에 반영이 된다. 그렇기 때문에 commit한 내용에 문제가 있을 경우 다른 개발자들에게 바로 영향을 미치게 되는 단점이 있다.
 
-- 서버와 연결이 끊어지면 기존 받아둔 소스 수정 이외의 일을 못함
+- 모든 버전 관리 관련 동작은 서버에서 처리되어야 하므로 서버의 부하가 크다.
 
-- 중앙 서버의 하드디스크에 문제가 생기면 모든 히스토리(로그)를 잃음 ->개인이 로컬에 저장한 스냅샷만 남게 됨
+- 서버가 죽거나 장애가 발생하면 버전 관리가 이루어지지 않는다.
+
+- 오프라인 상태에서는 버전 관리 시스템을 사용할 수 없다.
+
+- 모든 버전 관리 관련 동작은 적어도 한 번 서버를 경유해야 하므로 속도가 느리다. 
+
+- 로그를 보는 것 조차 서버에서 데이터를 받아와야 하므로 느리다.
+
+- 서버에서 데이터가 망가지거나 삭제되면 복구하기 매우 어렵다.
 
 
 ### 분산관리식(Git)
@@ -438,6 +511,15 @@ https://devrappers.tistory.com/category/Git
 
 - 저장소를 히스토리와 더불어 전부 복제하기 때문에 서버에 문제가 생겨도 로컬에서 작업이 가능
 
+- 중앙 집중식 버전 관리 시스템에 비해 복잡하다
+
+- 대부분의 버전 관리가 로컬에서 이루어지므로 속도도 빠르다.
+
+로컬 버전관리
 ![로컬 버전 관리](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%A1%9C%EC%BB%AC%20vcs%20.png)
+
+중앙집중식
 ![중앙집중식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EC%A4%91%EC%95%99%EC%A7%91%EC%A4%91%EC%8B%9D.png)
+
+분산관리식
 ![분산관리식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%B6%84%EC%82%B0%EA%B4%80%EB%A6%AC%EC%8B%9D.png)
