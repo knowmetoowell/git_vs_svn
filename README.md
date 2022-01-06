@@ -67,7 +67,7 @@
          - 위키
          - 보호된 브랜치 기능
          - 코드 소유자(Code owners)
-         - 저장소 인사이트 -->
+         - 저장소 인사이트-->
 
 
 
@@ -289,6 +289,8 @@ https://devrappers.tistory.com/category/Git
 
 ![IIS 설치](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202021-12-28%20094507.png)
 
+참고: https://offbyone.tistory.com/301
+
 2. Bonobo Git Server 설치
 
         다운로드 받고 압축 해제
@@ -358,7 +360,6 @@ https://devrappers.tistory.com/category/Git
         안정성이 좋음
         가볍고 빠름
         간단히 클릭만으로 commit comment를 수정할 수 있다.
-        특정브랜치의 커밋로그를 몰아서 볼 수있다.
         직관적인 UI
         다양한 자체 기능을 제공(redo/undo 등)
         푸시하지 않은 커밋이나 체크아웃, 커밋 메시지 편집 등을 쉽게 undo 할 수 있다
@@ -400,12 +401,12 @@ https://devrappers.tistory.com/category/Git
         초기 설정이 어려움
         UI가 직관적이지 못하다
 
-
+<!--  
 ### git stash란?
 
 - 로컬에서 작업한 소스 내용을 임시로 다른 곳에 저장하는 기능
         
-- 현재 작업하고 있는 내용이 있는데 급하게 요청 온 내용이 있어서 현재 내용을 임시로 저장해놓고 급하게 요청 온 건만 올리고(push) 싶을 때 사용
+- 현재 작업하고 있는 내용이 있는데 급하게 요청 온 내용이 있어서 현재 내용을 임시로 저장해놓고 급하게 요청 온 건만 올리고(push) 싶을 때 사용-->
 
 ### 시나리오
 0. 환경 구축
@@ -489,11 +490,11 @@ https://devrappers.tistory.com/category/Git
 
 2. 사용자 추가 및 그룹설정, 권한 부여
 
-3. 개발한 것 Server에 import
+3. 로컬에서 개발한 것이 있다면 Server에 import
 
-4. 다른 협업자에게 user id/pw 알려주기 
+4. svn checkout1  
 
-5. 다른 협업자가 Server Checkout 및 작업
+5. svn checkout2
 
 6. commit -> commit 시점에 만약 HEAD와 BASE가 다르다면 commit이 거부(show log에서 확인가능)
 
