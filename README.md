@@ -314,7 +314,7 @@ https://devrappers.tistory.com/category/Git
 
 - sourcetree
         
-        장점
+        -장점
         
         직관적인 UI
         한글 패치 - 한국 유저가 Git을 입문하기 쉬워 한국 한정 점유율이 높다.
@@ -322,7 +322,7 @@ https://devrappers.tistory.com/category/Git
         시각화- marge, branch등 시각화가 아주 잘 되어있다.
         무료 사용
 
-        단점
+        -단점
 
         줄수가 많은 파일을 미리 볼 때 느림
         계정 인증 변경이 어려움
@@ -337,6 +337,7 @@ https://devrappers.tistory.com/category/Git
 
 - Git-fork
 
+        - 장점
         안정성이 좋음 
         가볍고 빠름 
         1회성 구매(구매 안해도 큰 차이 없음)
@@ -347,14 +348,13 @@ https://devrappers.tistory.com/category/Git
         가로 세로 모드 지원
         꾸준한 업데이트
 
-        단점
+        - 단점
         Linux지원 안함
         한글 지원 안함
 
 - Git-Kraken
 
-        장점
-        
+        - 장점
         안정성이 좋음
         가볍고 빠름
         간단히 클릭만으로 commit comment를 수정할 수 있다.
@@ -364,28 +364,40 @@ https://devrappers.tistory.com/category/Git
         푸시하지 않은 커밋이나 체크아웃, 커밋 메시지 편집 등을 쉽게 undo 할 수 있다
         드래그&드랍을 이용한 merge
 
-        단점
+        - 단점
         private 저장소 사용시 월 구독료 내야함(git-hub pro 계정일 때 무료)
         이미지 뷰어 지원 안함
         한글 지원 안함
 
 - Github desktop
 
-        장점 
+        - 장점 
         github 사용시 효율이 좋음
         가볍고 빠름
         
-        단점        
-        브랜치의 내용 파악이 어렵다 
+        - 단점        
+        브랜치의 내용 파악이 어렵다
+        
 
 - SmartGit
 
-        장점
+        - 장점
         리눅스에서 유용함
         성능이 우수하다
 
-        단점
+        - 단점
         상용 목적으로 사용할 시 라이센스 구입해야 함
+        UI가 직관적이지 못하다
+
+- git extension
+
+        - 장점
+        리눅스에서 유용함
+        성능이 우수하다
+        한글 지원
+
+        - 단점
+        초기 설정이 어려움
         UI가 직관적이지 못하다
 
 
@@ -429,7 +441,7 @@ https://devrappers.tistory.com/category/Git
 
 13. Feature/basket 작업완료
 
-14. basket이 develop에 merge될때 member_manager 와의 충돌 발생 가능성 있음
+14. basket이 develop에 merge될때 member_manager 와의 충돌 발생 가능성 있음(branch간 충돌)
 
 15. 충돌이 발생할경우 conflict 해결
 
@@ -445,7 +457,7 @@ https://devrappers.tistory.com/category/Git
 
 21. hotfix/hf_1 생성
 
-22. 수정
+22. hf_1 수정
 
 23. develop/master에 hotfix/hf_1 merge
 
@@ -513,7 +525,7 @@ https://devrappers.tistory.com/category/Git
 
 - 모든 버전 관리 관련 동작은 서버에서 처리되어야 하므로 서버의 부하가 크다.
 
-- 서버가 죽거나 장애가 발생하면 버전 관리가 이루어지지 않는다.
+- 서버가 다운되거나 장애가 발생하면 버전 관리가 이루어지지 않는다.
 
 - 오프라인 상태에서는 버전 관리 시스템을 사용할 수 없다.
 
