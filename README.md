@@ -559,7 +559,7 @@ https://devrappers.tistory.com/category/Git
 ![중앙집중식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EC%A4%91%EC%95%99%EC%A7%91%EC%A4%91%EC%8B%9D.png)
 
 svn
-![svn 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EC%A4%91%EC%95%99%EC%A7%91%EC%A4%91%EC%8B%9D.png)
+![svn 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/svn_%EB%B0%A9%EC%8B%9D.png)
 
 -----------------------------------------------------------------------
 
@@ -567,6 +567,6 @@ svn
 ![분산관리식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%B6%84%EC%82%B0%EA%B4%80%EB%A6%AC%EC%8B%9D.png)
 
 git
-![git 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%B6%84%EC%82%B0%EA%B4%80%EB%A6%AC%EC%8B%9D.png)
+![git 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_%EB%B0%A9%EC%8B%9D.png)
 
 
