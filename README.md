@@ -378,6 +378,17 @@ https://devrappers.tistory.com/category/Git
         단점        
         브랜치의 내용 파악이 어렵다 
 
+- SmartGit
+
+        장점
+        리눅스에서 유용함
+        성능이 우수하다
+
+        단점
+        상용 목적으로 사용할 시 라이센스 구입해야 함
+        UI가 직관적이지 못하다
+
+
 ### git stash란?
 
 - 로컬에서 작업한 소스 내용을 임시로 다른 곳에 저장하는 기능
@@ -385,7 +396,12 @@ https://devrappers.tistory.com/category/Git
 - 현재 작업하고 있는 내용이 있는데 급하게 요청 온 내용이 있어서 현재 내용을 임시로 저장해놓고 급하게 요청 온 건만 올리고(push) 싶을 때 사용
 
 ### 시나리오
-0. 환경 구축 (깃 서버 생성, 원격저장소 설정 등)
+0. 환경 구축
+
+        1. bonobo git server admin계정 설정 / user 추가
+        2. bonobo git server repository 
+        3. 빈 폴더에 clone
+        4. git client에 등록
 
 1. 장바구니기능 요구사항이 생김
 
@@ -484,12 +500,16 @@ https://devrappers.tistory.com/category/Git
 - 로벌 버전 관리 시스템은 간단한 데이터베이스를 이용해 파일의 이력(변경 정보)를 관리하는 시스템
 
 - 협업을 해야 하는 상황에서는 로컬 버전 관리 시스템으로의 버전 관리가 쉽지 않다. 
-- 
+
 
 
 ### 중앙집중식(SVN) 
 
-- SVN은 로컬에서 Commit을 수행하면 바로 중앙 저장소에 반영이 된다. 그렇기 때문에 commit한 내용에 문제가 있을 경우 다른 개발자들에게 바로 영향을 미치게 되는 단점이 있다.
+- SVN은 로컬에서 Commit을 수행하면 바로 중앙 저장소에 반영이 된다. 
+
+- commit한 내용에 문제가 있을 경우 다른 개발자들에게 바로 영향을 미치게 된다.
+
+- 개발자가 자신만의 version history를 가질 수 없다.
 
 - 모든 버전 관리 관련 동작은 서버에서 처리되어야 하므로 서버의 부하가 크다.
 
@@ -503,9 +523,23 @@ https://devrappers.tistory.com/category/Git
 
 - 서버에서 데이터가 망가지거나 삭제되면 복구하기 매우 어렵다.
 
+- 대부분의 기능을 완성해놓고 소스를 중앙 저장소에 commit
+
+- 직관적인 사용법을 지원하기 때문에 단순한 버전 관리에 유용함
+
+- 브랜치/태그 등의 기능을 사용하기 비교적 어려움
+
+
+
 
 ### 분산관리식(Git)
-- Git은 로컬에서 Commit을 수행하면 로컬 저장소에 반영이 되고, 원하는 순간에 로컬 저장소에서 Push를 하면 원격 저장소에 반영이 된다.
+- Git은 로컬에서 Commit을 수행하면 로컬 저장소에 반영이 된다.
+
+- 개발자는 마음대로 commit을 수행하며 자신이 원하는 순간에 서버에 변경 내역(commit history)을 Push를 하면 원격 저장소에 반영이 된다.
+
+- 서버의 통합 관리자는 관리자가 원하는 순간에 각 개발자의 commit history를 가져올 수 있음.
+
+- 개발자가 자신만의 commit history를 가질 수 있으며, 개발자와 서버의 저장소는 독립적으로 관리
 
 - 오프라인 환경에서도 로컬저장소에 commit하면 되고 로그를 볼 수 있음.
 
@@ -513,13 +547,26 @@ https://devrappers.tistory.com/category/Git
 
 - 중앙 집중식 버전 관리 시스템에 비해 복잡하다
 
-- 대부분의 버전 관리가 로컬에서 이루어지므로 속도도 빠르다.
+- 브랜치/태그 등의 기능을 사용하기 편함
+
+- 대부분의 버전 관리가 로컬에서 이루어지므로 속도가 빠르다.
 
 로컬 버전관리
 ![로컬 버전 관리](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%A1%9C%EC%BB%AC%20vcs%20.png)
 
+---------------------------------------
 중앙집중식
 ![중앙집중식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EC%A4%91%EC%95%99%EC%A7%91%EC%A4%91%EC%8B%9D.png)
 
+svn
+![svn 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EC%A4%91%EC%95%99%EC%A7%91%EC%A4%91%EC%8B%9D.png)
+
+-----------------------------------------------------------------------
+
 분산관리식
 ![분산관리식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%B6%84%EC%82%B0%EA%B4%80%EB%A6%AC%EC%8B%9D.png)
+
+git
+![git 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%B6%84%EC%82%B0%EA%B4%80%EB%A6%AC%EC%8B%9D.png)
+
+
