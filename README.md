@@ -408,6 +408,18 @@ https://devrappers.tistory.com/category/Git
         
 - 현재 작업하고 있는 내용이 있는데 급하게 요청 온 내용이 있어서 현재 내용을 임시로 저장해놓고 급하게 요청 온 건만 올리고(push) 싶을 때 사용-->
 
+
+# 추가한 것
+
+## bonobo git server port 부여
+
+https://offbyone.tistory.com/417
+
+## 제어판\사용자 계정\자격 증명 관리자 => git 자격증명
+
+https://yunseul-light.blogspot.com/2017/08/github-windows-git.html
+------------
+
 ### 시나리오
 0. 환경 구축
 
@@ -464,7 +476,20 @@ https://devrappers.tistory.com/category/Git
 
 24. tag 남기기
 
+------
+### 다른사람이 push하여 충돌이 발생했을 때(같은 브랜치 내에서 협업할 때)
 
+1. 같은 원격 저장소 클론
+
+2. 같은 파일 수정 / 다른 파일 수정
+
+3. 하나를 먼저 커밋 푸쉬
+
+4. 나머지 하나 커밋 푸쉬 -> 오류 발생
+
+5. pull을 이용해 최신 상태로 업데이트 -> 같은 파일을 수정 했다면 충돌 발생 
+
+6. 충돌 해결 및 커밋 푸쉬
 
 -------
 <br>
