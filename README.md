@@ -551,16 +551,5 @@ checkout
 ![검색량 추이](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EA%B2%80%EC%83%89%EB%9F%89%20%EC%B6%94%EC%9D%B4.png)
 
 
-https://devrappers.tistory.com/category/Git
 
-
-----------------------------------------------------------------
-
-<br>
-
-## SVN
-
-
-
-----
 
