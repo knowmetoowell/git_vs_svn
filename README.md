@@ -12,6 +12,84 @@
 
  - Git과 SVN을 많이 씀
 
+## 버전 관리 시스템
+
+### 로컬 버전 관리
+
+- 로벌 버전 관리 시스템은 간단한 데이터베이스를 이용해 파일의 이력(변경 정보)를 관리하는 시스템
+
+- 협업을 해야 하는 상황에서는 로컬 버전 관리 시스템으로의 버전 관리가 쉽지 않다. 
+
+
+
+### 중앙집중식(SVN) 
+
+- SVN은 로컬에서 Commit을 수행하면 바로 중앙 저장소에 반영이 된다. 
+
+- commit한 내용에 문제가 있을 경우 다른 개발자들에게 바로 영향을 미치게 된다.
+
+- 개발자가 자신만의 version history를 가질 수 없다.
+
+- 모든 버전 관리 관련 동작은 서버에서 처리되어야 하므로 서버의 부하가 크다.
+
+- 서버가 다운되거나 장애가 발생하면 버전 관리가 이루어지지 않는다.
+
+- 오프라인 상태에서는 버전 관리 시스템을 사용할 수 없다.
+
+- 모든 버전 관리 관련 동작은 적어도 한 번 서버를 경유해야 하므로 속도가 느리다. 
+
+- 로그를 보는 것 조차 서버에서 데이터를 받아와야 하므로 느리다.
+
+- 서버에서 데이터가 망가지거나 삭제되면 복구하기 매우 어렵다.
+
+- 대부분의 기능을 완성해놓고 소스를 중앙 저장소에 commit
+
+- 직관적인 사용법을 지원하기 때문에 단순한 버전 관리에 유용함
+
+- 브랜치/태그 등의 기능을 사용하기 비교적 어려움
+
+
+
+
+### 분산관리식(Git)
+- Git은 로컬에서 Commit을 수행하면 로컬 저장소에 반영이 된다.
+
+- 개발자는 마음대로 commit을 수행하며 자신이 원하는 순간에 서버에 변경 내역(commit history)을 Push를 하면 원격 저장소에 반영이 된다.
+
+- 서버의 통합 관리자는 관리자가 원하는 순간에 각 개발자의 commit history를 가져올 수 있음.
+
+- 개발자가 자신만의 commit history를 가질 수 있으며, 개발자와 서버의 저장소는 독립적으로 관리
+
+- 오프라인 환경에서도 로컬저장소에 commit하면 되고 로그를 볼 수 있음.
+
+- 저장소를 히스토리와 더불어 전부 복제하기 때문에 서버에 문제가 생겨도 로컬에서 작업이 가능
+
+- 중앙 집중식 버전 관리 시스템에 비해 복잡하다
+
+- 브랜치/태그 등의 기능을 사용하기 편함
+
+- 대부분의 버전 관리가 로컬에서 이루어지므로 속도가 빠르다.
+
+로컬 버전관리
+![로컬 버전 관리](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%A1%9C%EC%BB%AC%20vcs%20.png)
+
+---------------------------------------
+중앙집중식
+![중앙집중식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EC%A4%91%EC%95%99%EC%A7%91%EC%A4%91%EC%8B%9D.png)
+
+svn
+![svn 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/svn_%EB%B0%A9%EC%8B%9D.png)
+
+-----------------------------------------------------------------------
+
+분산관리식
+![분산관리식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%B6%84%EC%82%B0%EA%B4%80%EB%A6%AC%EC%8B%9D.png)
+
+git
+![git 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_%EB%B0%A9%EC%8B%9D.png)
+
+
+
 
 ------
 
@@ -21,7 +99,7 @@
 
         버전 관리 툴, svn에 비해 기능이 다양함
 
-- Git bash vs Git gui vs Sourcetree
+- Git bash vs Git gui vs Sourcetree(Git client)
        
         git bash는 CLI환경으로 명령어를 사용하여 git을 사용함(GIT 기본 프로그램)
         git gui는 다양한 명령어를 GUI로 시각화하여 쉽게 git을 사용하기 위한 도구(GIT 기본 프로그램)
@@ -49,7 +127,7 @@
         JIRA, Trello와 같은 DevOps tool 제공(같은 회사 제품)
         속도와 안정성은 무난함
 
-<!-- ### Git-hub 무료 계정 vs Pro 플랜 계정
+Git-hub 무료 계정 vs Pro 플랜 계정
 
 - Public 저장소에서는 무료 계정과 Pro 플랜 계정의 차이가 거의 없음
 - GitHub Actions 사용 시간이 월 2,000분에서 3,000분으로
@@ -126,137 +204,10 @@
 
 - 코드 충돌을 최소화할 수 있고 push 권한이 없는 오픈 소스 프로젝트에 기여할 때(Fork) 많이 사용
 
-------
-### Git 사용 예시
-0. 환경구축
-
-1. github repository 생성 / local 폴더 생성
-
-2. 협업자가 있다면 등록
-
-3. Git-flow에 따른 사용
-
-4. Conflict가 없으면 브랜치 병합(Merge) 혹은 Pull Request
-
-5. Conflict가 있으면 해결 후 브랜치 병합(Merge) 혹은 Pull Request
-
-6. push 권한이 없는 프로젝트(open source인 경우)라면 Fork후 2~4 반복
-
-example github opensource - https://github.com/vuejs/vue
-------
-## SVN
-
-### 필요한 설치 프로그램
-- TortoiseSVN
-        
-        버전 관리 툴, git에 비해 기능이 적음
-
-- Visual SVN Server Manager
-        
-        github, gitlab 처럼 원격 repository를 생성
-        repository 접근 계정 및 권한 설정
-
-- SVN 설치 및 사용법 참조
-https://junspapa-itdev.tistory.com/50
-
-### SVN 용어
-
-Update(= git pull)
-
-- Local의 파일을 Repository와 비교하여 최신 버전의 상태로 갱신한다.
-
-- 동일한 파일을 Repository와 Local에서 동시에 변경한 경우 서브버전에서 자동으로 Merge 해주지만
-서브버전에서 Merge를 할 수 없을 경우 Conflict상태로 변경될 수 있다.
-
-- 충돌이 발생하면 사용자에게 Merge 작업을 위임한다.
-
-
-Revision
-
-- 이름이 의미하듯 수정된 버전을 의미한다. 
-
-- 클라이언트가 Repository에 새로운 파일 또는 파일을 수정하여 commit할 때 마다 revision 번호가 하나씩 증가하게 된다.
-
-
-HEAD
-
-- Repository에 저장된 최신 revision을 의미한다. 
-
-- 즉 누군가에 의해 가장 최근에 commit된 revision이다.
-
-BASE
-
-- 클라이언트가 checkout 또는 update 명령을 통해 Repository로 부터 내려받은 revision을 의미한다. 
-
-- 이 revision을 기준으로 클라이언트는 수정을하고 commit 하게 된다. 
-
-- commit 시점에 만약 HEAD와 BASE가 다르다면 commit이 거부되고 update를 먼저 수행해야만 commit이 가능하게 된다.
-
-### 깃과 단어는 같지만 다른 동작
-commit
-- git은 로컬저장소에 저장된 것을 snapshot / 원격 저장소에서의 commit은 원격저장소에 반영됨
-- svn은 원격저장소에 저장
-
-checkout
-- git은 작업 브랜치로 이동하는 것을 의미
-- svn은 로컬저장소와 원격저장소를 연결(= git remote)
-
-
-
------------------
-
-
-
-### svn 사용 예시
-0. 환경 구축
-
-1. Visual SVN Server - Repository 만들기
-
-2. 사용자 추가 및 그룹설정, 권한 부여
-
-3. 개발한 것 Server에 import
-
-4. 다른 협업자에게 user id/pw 알려주기 
-
-5. 다른 협업자가 Server Checkout 및 작업
-
-6. commit -> commit 시점에 만약 HEAD와 BASE가 다르다면 commit이 거부(show log에서 확인가능)
-
-7. conflict 해결
-
-8. 다시 commit
-
-주기적 update
-
-
-
-
-## git-svn 비교
-
-### 비교표
-![git_svn 비교표](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn_%EB%B9%84%EA%B5%90%ED%91%9C.png)
-
-### 기능 도식화
-
-![git_svn 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png)
-
-### 관심도 추이
-
-![검색량 추이](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EA%B2%80%EC%83%89%EB%9F%89%20%EC%B6%94%EC%9D%B4.png)
-
-
-https://devrappers.tistory.com/category/Git
-
-
-----------------------------------------------------------------
-<br>
-
-# git vs svn 2
-
-## Git
----------
-
+----------
 ## Windows git server 구축
+
+- 웹(github 등)상에 소스코드를 올리고 싶지않고 개인 서버에 원격 저장소를 구축하고 싶을 때.
 
 ### 설치 필요 프로그램
 - Git for Windows
@@ -401,15 +352,15 @@ https://devrappers.tistory.com/category/Git
         초기 설정이 어려움
         UI가 직관적이지 못하다
 
-<!--  
+
 ### git stash란?
 
 - 로컬에서 작업한 소스 내용을 임시로 다른 곳에 저장하는 기능
         
-- 현재 작업하고 있는 내용이 있는데 급하게 요청 온 내용이 있어서 현재 내용을 임시로 저장해놓고 급하게 요청 온 건만 올리고(push) 싶을 때 사용-->
+- 현재 작업하고 있는 내용이 있는데 급하게 요청 온 내용이 있어서 현재 내용을 임시로 저장해놓고 급하게 요청 온 건만 올리고(push) 싶을 때 사용
 
 
-# 추가한 것
+
 
 ## bonobo git server port 부여
 
@@ -420,13 +371,11 @@ https://offbyone.tistory.com/417
 https://yunseul-light.blogspot.com/2017/08/github-windows-git.html
 ------------
 
-### 시나리오
-0. 환경 구축
 
-        1. bonobo git server admin계정 설정 / user 추가
-        2. bonobo git server repository 
-        3. 빈 폴더에 clone
-        4. git client에 등록
+
+------
+### Git 사용 예시
+
 
 1. 장바구니기능 요구사항이 생김
 
@@ -477,7 +426,7 @@ https://yunseul-light.blogspot.com/2017/08/github-windows-git.html
 24. tag 남기기
 
 ------
-### 다른사람이 push하여 충돌이 발생했을 때(같은 브랜치 내에서 협업할 때)
+### 다른사람이 push하여 충돌이 발생했을 때(같은 브랜치 내에서 협업할 때) 시나리오
 
 1. 같은 원격 저장소 클론
 
@@ -491,10 +440,65 @@ https://yunseul-light.blogspot.com/2017/08/github-windows-git.html
 
 6. 충돌 해결 및 커밋 푸쉬
 
--------
-<br>
 
+----------------
 ## SVN
+
+### 필요한 설치 프로그램
+- TortoiseSVN
+        
+        버전 관리 툴, git에 비해 기능이 적음
+
+- Visual SVN Server Manager
+        
+        github, gitlab 처럼 원격 repository를 생성
+        repository 접근 계정 및 권한 설정
+
+- SVN 설치 및 사용법 참조
+https://junspapa-itdev.tistory.com/50
+
+### SVN 용어
+
+Update(= git pull)
+
+- Local의 파일을 Repository와 비교하여 최신 버전의 상태로 갱신한다.
+
+- 동일한 파일을 Repository와 Local에서 동시에 변경한 경우 서브버전에서 자동으로 Merge 해주지만
+서브버전에서 Merge를 할 수 없을 경우 Conflict상태로 변경될 수 있다.
+
+- 충돌이 발생하면 사용자에게 Merge 작업을 위임한다.
+
+
+Revision
+
+- 이름이 의미하듯 수정된 버전을 의미한다. 
+
+- 클라이언트가 Repository에 새로운 파일 또는 파일을 수정하여 commit할 때 마다 revision 번호가 하나씩 증가하게 된다.
+
+
+HEAD
+
+- Repository에 저장된 최신 revision을 의미한다. 
+
+- 즉 누군가에 의해 가장 최근에 commit된 revision이다.
+
+BASE
+
+- 클라이언트가 checkout 또는 update 명령을 통해 Repository로 부터 내려받은 revision을 의미한다. 
+
+- 이 revision을 기준으로 클라이언트는 수정을하고 commit 하게 된다. 
+
+- commit 시점에 만약 HEAD와 BASE가 다르다면 commit이 거부되고 update를 먼저 수행해야만 commit이 가능하게 된다.
+
+### 깃과 단어는 같지만 다른 동작
+commit
+- git은 로컬저장소에 저장된 것을 snapshot / 원격 저장소에서의 commit은 원격저장소에 반영됨
+- svn은 원격저장소에 저장
+
+checkout
+- git은 작업 브랜치로 이동하는 것을 의미
+- svn은 로컬저장소와 원격저장소를 연결(= git remote)
+
 
 ### Visual SVN Server 구축
 
@@ -529,82 +533,34 @@ https://yunseul-light.blogspot.com/2017/08/github-windows-git.html
 
     주기적 update
 
+
+
+---------------------------------
+
+## git-svn 비교
+
+### 비교표
+![git_svn 비교표](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn_%EB%B9%84%EA%B5%90%ED%91%9C.png)
+
+### 기능 도식화
+
+![git_svn 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EB%8F%84%EC%8B%9D.png)
+
+### 관심도 추이
+
+![검색량 추이](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_svn%20%EA%B2%80%EC%83%89%EB%9F%89%20%EC%B6%94%EC%9D%B4.png)
+
+
+https://devrappers.tistory.com/category/Git
+
+
+----------------------------------------------------------------
+
+<br>
+
+## SVN
+
+
+
 ----
-
-## 버전 관리 시스템
-
-### 로컬 버전 관리
-
-- 로벌 버전 관리 시스템은 간단한 데이터베이스를 이용해 파일의 이력(변경 정보)를 관리하는 시스템
-
-- 협업을 해야 하는 상황에서는 로컬 버전 관리 시스템으로의 버전 관리가 쉽지 않다. 
-
-
-
-### 중앙집중식(SVN) 
-
-- SVN은 로컬에서 Commit을 수행하면 바로 중앙 저장소에 반영이 된다. 
-
-- commit한 내용에 문제가 있을 경우 다른 개발자들에게 바로 영향을 미치게 된다.
-
-- 개발자가 자신만의 version history를 가질 수 없다.
-
-- 모든 버전 관리 관련 동작은 서버에서 처리되어야 하므로 서버의 부하가 크다.
-
-- 서버가 다운되거나 장애가 발생하면 버전 관리가 이루어지지 않는다.
-
-- 오프라인 상태에서는 버전 관리 시스템을 사용할 수 없다.
-
-- 모든 버전 관리 관련 동작은 적어도 한 번 서버를 경유해야 하므로 속도가 느리다. 
-
-- 로그를 보는 것 조차 서버에서 데이터를 받아와야 하므로 느리다.
-
-- 서버에서 데이터가 망가지거나 삭제되면 복구하기 매우 어렵다.
-
-- 대부분의 기능을 완성해놓고 소스를 중앙 저장소에 commit
-
-- 직관적인 사용법을 지원하기 때문에 단순한 버전 관리에 유용함
-
-- 브랜치/태그 등의 기능을 사용하기 비교적 어려움
-
-
-
-
-### 분산관리식(Git)
-- Git은 로컬에서 Commit을 수행하면 로컬 저장소에 반영이 된다.
-
-- 개발자는 마음대로 commit을 수행하며 자신이 원하는 순간에 서버에 변경 내역(commit history)을 Push를 하면 원격 저장소에 반영이 된다.
-
-- 서버의 통합 관리자는 관리자가 원하는 순간에 각 개발자의 commit history를 가져올 수 있음.
-
-- 개발자가 자신만의 commit history를 가질 수 있으며, 개발자와 서버의 저장소는 독립적으로 관리
-
-- 오프라인 환경에서도 로컬저장소에 commit하면 되고 로그를 볼 수 있음.
-
-- 저장소를 히스토리와 더불어 전부 복제하기 때문에 서버에 문제가 생겨도 로컬에서 작업이 가능
-
-- 중앙 집중식 버전 관리 시스템에 비해 복잡하다
-
-- 브랜치/태그 등의 기능을 사용하기 편함
-
-- 대부분의 버전 관리가 로컬에서 이루어지므로 속도가 빠르다.
-
-로컬 버전관리
-![로컬 버전 관리](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%A1%9C%EC%BB%AC%20vcs%20.png)
-
----------------------------------------
-중앙집중식
-![중앙집중식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EC%A4%91%EC%95%99%EC%A7%91%EC%A4%91%EC%8B%9D.png)
-
-svn
-![svn 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/svn_%EB%B0%A9%EC%8B%9D.png)
-
------------------------------------------------------------------------
-
-분산관리식
-![분산관리식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/%EB%B6%84%EC%82%B0%EA%B4%80%EB%A6%AC%EC%8B%9D.png)
-
-git
-![git 도식](https://github.com/knowmetoowell/git_vs_svn/blob/main/img/git_%EB%B0%A9%EC%8B%9D.png)
-
 
